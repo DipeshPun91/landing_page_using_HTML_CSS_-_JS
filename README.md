@@ -1,6 +1,12 @@
 # Brainwave.io - Business Landing Page
 
-![Preview](https://img.shields.io/badge/Status-Live-brightgreen) ![Responsive](https://img.shields.io/badge/Responsive-Yes-blue) ![License](https://img.shields.io/badge/License-MIT-green)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![Responsive](https://img.shields.io/badge/Responsive-Design-007ACC?style=for-the-badge) ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
+## 📸 Preview
+
+<div style="max-height: 500px; overflow-y: auto; border: 2px solid #e1e4e8; border-radius: 6px; padding: 10px; background: #f6f8fa;">
+  <img src="./assets/landing-page.jpeg" alt="Brainwave.io Landing Page Screenshot" style="width: 100%; height: auto;">
+</div>
 
 A modern, professional landing page for business consultancy services. Fully responsive design with interactive elements.
 
@@ -16,7 +22,7 @@ A modern, professional landing page for business consultancy services. Fully res
 - ✅ **Modern Design** - Clean layout with gradient accents
 - ✅ **Interactive Elements** - Hover effects & animations
 - ✅ **Mobile Navigation** - Hamburger menu for small screens
-- ✅ **Contact Form** - With Google Maps integration
+- ✅ **Contact Form** - With contact information section
 - ✅ **Fast Loading** - Optimized performance
 - ✅ **Cross-browser Compatible** - Works on all modern browsers
 
@@ -30,13 +36,13 @@ A modern, professional landing page for business consultancy services. Fully res
 6. **Video Section** - Full-width video background
 7. **Testimonials** - Customer reviews
 8. **Case Studies** - Portfolio showcase
-9. **Contact** - Form + Google Maps integration
+9. **Contact** - Form + contact information
 10. **Footer** - Multi-column footer with links
 
 ## 🛠️ Technologies
 
 - **HTML5** - Semantic markup
-- **CSS3** - Flexbox, Grid, Animations
+- **CSS3** - Flexbox, Grid, Animations, CSS Variables
 - **JavaScript** - Interactive functionality
 - **Font Awesome** - Icons
 
@@ -46,11 +52,10 @@ A modern, professional landing page for business consultancy services. Fully res
 - **Tablet**: 768px - 1024px (Adaptive layouts)
 - **Desktop**: > 1024px (Full multi-column)
 
-🙋‍♂️ Support
-Report issues: Open a GitHub issue
+## 🙋‍♂️ Support
 
-Questions: Check the code comments
+**Report issues**: Open a GitHub issue  
+**Questions**: Check the code comments  
+**Customizations**: Edit the CSS/HTML directly
 
-Customizations: Edit the CSS/HTML directly
-
-Star this repo if you found it useful! ⭐
+⭐ Star this repo if you found it useful!

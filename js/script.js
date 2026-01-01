@@ -9,6 +9,7 @@ mobileMenuBtn.addEventListener("click", () => {
 
   // Change icon based on menu state
   const icon = mobileMenuBtn.querySelector("i");
+
   if (mainNav.classList.contains("active")) {
     icon.classList.remove("fa-bars");
     icon.classList.add("fa-times");
@@ -19,19 +20,29 @@ mobileMenuBtn.addEventListener("click", () => {
       mobileBtn.classList.add("mobile-visible");
       mobileBtn.addEventListener("click", () => {
         alert("Get Started button clicked from mobile menu");
-        mainNav.classList.remove("active");
-        icon.classList.remove("fa-times");
-        icon.classList.add("fa-bars");
-        document.body.classList.remove("menu-open");
+        closeMobileMenu();
       });
       mainNav.appendChild(mobileBtn);
     }
   } else {
-    icon.classList.remove("fa-times");
-    icon.classList.add("fa-bars");
-    document.body.classList.remove("menu-open");
+    closeMobileMenu();
   }
 });
+
+// Function to close mobile menu
+function closeMobileMenu() {
+  const icon = mobileMenuBtn.querySelector("i");
+  icon.classList.remove("fa-times");
+  icon.classList.add("fa-bars");
+  mainNav.classList.remove("active");
+  document.body.classList.remove("menu-open");
+
+  // Remove the mobile button when menu closes
+  const mobileBtn = document.querySelector(".header-btn.mobile-visible");
+  if (mobileBtn) {
+    mobileBtn.remove();
+  }
+}
 
 // Close mobile menu when clicking outside
 document.addEventListener("click", (e) => {
@@ -40,11 +51,14 @@ document.addEventListener("click", (e) => {
     !e.target.closest(".mobile-menu-btn") &&
     mainNav.classList.contains("active")
   ) {
-    mainNav.classList.remove("active");
-    const icon = mobileMenuBtn.querySelector("i");
-    icon.classList.remove("fa-times");
-    icon.classList.add("fa-bars");
-    document.body.classList.remove("menu-open");
+    closeMobileMenu();
+  }
+});
+
+// Close mobile menu when window is resized to desktop size
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 1024 && mainNav.classList.contains("active")) {
+    closeMobileMenu();
   }
 });
 
@@ -64,31 +78,31 @@ window.addEventListener("scroll", () => {
   lastScroll = currentScroll;
 });
 
-// Button click handlers
-document
-  .querySelectorAll(
-    ".header-btn:not(.mobile-visible), .hero-btn, .footer-cta-btn"
-  )
-  .forEach((button) => {
-    button.addEventListener("click", () => {
-      alert(
-        "Thank you for your interest! This would navigate to the project page in a real implementation."
-      );
-    });
+// Button click handlers (excluding mobile button)
+document.querySelectorAll(".hero-btn, .footer-cta-btn").forEach((button) => {
+  button.addEventListener("click", (e) => {
+    e.preventDefault();
+    alert(
+      "Thank you for your interest! This would navigate to the project page in a real implementation."
+    );
   });
+});
+
+// Original header button click handler (desktop only)
+if (headerBtn) {
+  headerBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    alert(
+      "Thank you for your interest! This would navigate to the project page in a real implementation."
+    );
+  });
+}
 
 // Navigation click handlers
 document.querySelectorAll("nav li").forEach((item) => {
   item.addEventListener("click", () => {
     alert(`Navigating to ${item.textContent} section`);
-    // Close mobile menu if open
-    if (mainNav.classList.contains("active")) {
-      mainNav.classList.remove("active");
-      const icon = mobileMenuBtn.querySelector("i");
-      icon.classList.remove("fa-times");
-      icon.classList.add("fa-bars");
-      document.body.classList.remove("menu-open");
-    }
+    closeMobileMenu();
   });
 });
 
